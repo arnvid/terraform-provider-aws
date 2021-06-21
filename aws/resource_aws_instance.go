@@ -509,7 +509,7 @@ func resourceAwsInstance() *schema.Resource {
 				Computed: true,
 				ForceNew: true,
 			},
-			"tags":     tagsSchema(),
+			"tags":     tagsSchemaComputed(),
 			"tags_all": tagsSchemaComputed(),
 			"tenancy": {
 				Type:     schema.TypeString,
