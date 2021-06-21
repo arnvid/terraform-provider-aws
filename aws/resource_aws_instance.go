@@ -528,6 +528,7 @@ func resourceAwsInstance() *schema.Resource {
 				Computed:      true,
 				ForceNew:      true,
 				ConflictsWith: []string{"user_data_base64"},
+				AtLeastOneOf:  []string{"user_data", "user_data_base64", "launch_template"},
 				DiffSuppressFunc: func(k, old, new string, d *schema.ResourceData) bool {
 					// Sometimes the EC2 API responds with the equivalent, empty SHA1 sum
 					// echo -n "" | shasum
